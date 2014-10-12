@@ -1,0 +1,9 @@
+Z:\Dropbox\Projects\Home\VPNControl\VPNControl\VPNControl\bin\Debug\VPNControl.exe
+Z:\Dropbox\Projects\Home\VPNControl\VPNControl\VPNControl\bin\Debug\VPNControl.pdb
+Z:\Dropbox\Projects\Home\VPNControl\VPNControl\VPNControl\obj\x86\Debug\VPNControl.frmMain.resources
+Z:\Dropbox\Projects\Home\VPNControl\VPNControl\VPNControl\obj\x86\Debug\VPNControl.Properties.Resources.resources
+Z:\Dropbox\Projects\Home\VPNControl\VPNControl\VPNControl\obj\x86\Debug\VPNControl.csproj.GenerateResource.Cache
+Z:\Dropbox\Projects\Home\VPNControl\VPNControl\VPNControl\obj\x86\Debug\VPNControl.exe
+Z:\Dropbox\Projects\Home\VPNControl\VPNControl\VPNControl\obj\x86\Debug\VPNControl.pdb
+Z:\Dropbox\Projects\Home\VPNControl\VPNControl\VPNControl\obj\x86\Debug\VPNControl.csprojResolveAssemblyReference.cache
+Z:\Dropbox\Projects\Home\VPNControl\VPNControl\VPNControl\obj\x86\Debug\VPNControl.ActionEditor.resources
