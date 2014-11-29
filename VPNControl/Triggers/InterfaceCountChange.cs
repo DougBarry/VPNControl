@@ -6,7 +6,7 @@ using System.Net.NetworkInformation;
 
 namespace VPNControl.Triggers
 {
-    [VPNCComponent("Newtork interface count change","DougBarry","1","https://github.com/dougbarry", VPNCComponentType.Trigger)]
+    [VPNCComponentTrigger("Newtork interface count change","Number of network interfaces changes (increase/decrease)","DougBarry","1","https://github.com/dougbarry")]
     internal class InterfaceCountChange : IVPNCTrigger
     {
         private int _lkInterfaceCount = 0;
@@ -59,6 +59,43 @@ namespace VPNControl.Triggers
             return false;
         }
 
-    
+
+
+
+        public string GetAuthor()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetDescription()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetWebsite()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetVersion()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetName()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IVPNCComponentSettings GetAvailableSettings()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public void LoadSettings(IVPNCComponentSettings properties)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

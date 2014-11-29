@@ -9,21 +9,25 @@ namespace VPNControl
     /// The VPNCComponentAttribute is used to identify the main class of a component.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
-    public sealed class VPNCComponentAttribute : Attribute
+    public abstract class VPNCComponentAttribute : Attribute
     {
-        public string Name;
+        public string HRName;
+        public string Description;
         public string Author;
         public string Version;
         public string Website;
         public VPNCComponentType Type;
+        public Guid GUID;
 
-        public VPNCComponentAttribute(string Name, string Author, string Version, string Website, VPNCComponentType Type)
+        public VPNCComponentAttribute(string HRName, string Description, string Author, string Version, string Website, VPNCComponentType Type)
         {
-            this.Name = Name;
+            this.HRName = HRName;
+            this.Description = Description;
             this.Author = Author;
             this.Version = Version;
             this.Website = Website;
             this.Type = Type;
+            this.GUID = Guid.NewGuid();
         }
 
     }

@@ -13,9 +13,11 @@ namespace VPNControl
         [STAThread]
         static void Main()
         {
+            Logger.Start();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
+            Logger.End();
         }
     }
 }

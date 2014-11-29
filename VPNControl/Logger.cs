@@ -14,13 +14,15 @@ namespace VPNControl
         Important = 40,
         Warning = 30,
         Info = 20,
+        All = 1
     }
 
     public static class Logger
     {
         private static List<Delegate> logTargets;
 
-        public static int MinLogDisplayLevel = (int)DebugSeverity.Info;
+        // FIXME change to appropriate value
+        public static int MinLogDisplayLevel = (int)DebugSeverity.All;
 
         public static void AddLogTarget(Delegate d)
         {
@@ -72,7 +74,14 @@ namespace VPNControl
             {
                 foreach (Delegate d in logTargets)
                 {
-                    d.DynamicInvoke(message);
+                    try
+                    {
+                        d.DynamicInvoke(message);
+                    }
+                    catch(Exception e)
+                    {
+                        continue;
+                    }
                 }
             }
         }

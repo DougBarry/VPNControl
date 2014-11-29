@@ -5,7 +5,7 @@ using System.Text;
 
 namespace VPNControl
 {
-    internal interface IVPNCTrigger:IVPNCComponent
+    public interface IVPNCTrigger:IVPNCComponent
     {
 
         bool TriggerTest();

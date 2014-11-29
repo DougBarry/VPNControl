@@ -11,7 +11,8 @@
     <RootNamespace>VPNControl</RootNamespace>
     <AssemblyName>VPNControl</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -33,9 +34,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>VPNControl.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0\System.Management.Automation.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,17 +55,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionEditor.cs">
+    <Compile Include="ComboItemAction.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="frmActionAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActionEditor.Designer.cs">
-      <DependentUpon>ActionEditor.cs</DependentUpon>
+    <Compile Include="frmActionAbout.Designer.cs">
+      <DependentUpon>frmActionAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActionEditor.Designer.cs">
+      <DependentUpon>frmActionEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Actions\CloseApplicationForcefully.cs" />
     <Compile Include="Actions\CloseApplicationGracefully.cs" />
     <Compile Include="Actions\ExecutePowershell.cs" />
     <Compile Include="Actions\ExecuteProgram.cs" />
     <Compile Include="Actions\uTorrentAPI.cs" />
+    <Compile Include="frmEventGroupEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEventGroupEditor.Designer.cs">
+      <DependentUpon>frmEventGroupEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,21 +87,33 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="IVPNCComponent.cs" />
+    <Compile Include="IVPNCComponentSettings.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertySorter.cs" />
     <Compile Include="Triggers\DateTimeCondition.cs" />
     <Compile Include="Triggers\ExecutePowershellResult.cs" />
     <Compile Include="Triggers\ExecuteProgramResult.cs" />
     <Compile Include="Triggers\InterfaceCountChange.cs" />
     <Compile Include="Triggers\InterfaceNameRegex.cs" />
     <Compile Include="Triggers\PingTarget.cs" />
-    <Compile Include="VPNCAction.cs" />
+    <Compile Include="IVPNCAction.cs" />
+    <Compile Include="VPNCComponentActionAttribute.cs" />
     <Compile Include="VPNCComponentAttribute.cs" />
+    <Compile Include="VPNCComponentTriggerAttribute.cs" />
     <Compile Include="VPNCComponentType.cs" />
-    <Compile Include="VPNCTrigger.cs" />
-    <EmbeddedResource Include="ActionEditor.resx">
-      <DependentUpon>ActionEditor.cs</DependentUpon>
+    <Compile Include="VPNCEventGroup.cs" />
+    <Compile Include="IVPNCTrigger.cs" />
+    <Compile Include="VPNCEventGroupItem.cs" />
+    <EmbeddedResource Include="frmActionAbout.resx">
+      <DependentUpon>frmActionAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActionEditor.resx">
+      <DependentUpon>frmActionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEventGroupEditor.resx">
+      <DependentUpon>frmEventGroupEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -91,7 +126,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

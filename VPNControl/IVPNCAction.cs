@@ -5,7 +5,7 @@ using System.Text;
 
 namespace VPNControl
 {
-    internal interface IVPNCAction :IVPNCComponent
+    public interface IVPNCAction :IVPNCComponent
     {
 
         void PerformAction();

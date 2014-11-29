@@ -1,6 +1,6 @@
 ﻿namespace VPNControl
 {
-    partial class ActionEditor
+    partial class frmActionEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,10 @@
         {
             this.pgActionEditor = new System.Windows.Forms.PropertyGrid();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmbActionType = new System.Windows.Forms.ComboBox();
+            this.cmbActionTypes = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.butOK = new System.Windows.Forms.Button();
+            this.butCancel = new System.Windows.Forms.Button();
             this.lnkActionAbout = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,7 +43,8 @@
             this.pgActionEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pgActionEditor.Location = new System.Drawing.Point(0, 0);
             this.pgActionEditor.Name = "pgActionEditor";
-            this.pgActionEditor.Size = new System.Drawing.Size(444, 294);
+            this.pgActionEditor.PropertySort = System.Windows.Forms.PropertySort.Categorized;
+            this.pgActionEditor.Size = new System.Drawing.Size(446, 296);
             this.pgActionEditor.TabIndex = 0;
             // 
             // panel1
@@ -54,18 +55,19 @@
             this.panel1.Controls.Add(this.pgActionEditor);
             this.panel1.Location = new System.Drawing.Point(12, 76);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 294);
+            this.panel1.Size = new System.Drawing.Size(446, 296);
             this.panel1.TabIndex = 1;
             // 
-            // cmbActionType
+            // cmbActionTypes
             // 
-            this.cmbActionType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbActionTypes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbActionType.FormattingEnabled = true;
-            this.cmbActionType.Location = new System.Drawing.Point(99, 32);
-            this.cmbActionType.Name = "cmbActionType";
-            this.cmbActionType.Size = new System.Drawing.Size(297, 21);
-            this.cmbActionType.TabIndex = 2;
+            this.cmbActionTypes.FormattingEnabled = true;
+            this.cmbActionTypes.Location = new System.Drawing.Point(99, 32);
+            this.cmbActionTypes.Name = "cmbActionTypes";
+            this.cmbActionTypes.Size = new System.Drawing.Size(299, 21);
+            this.cmbActionTypes.TabIndex = 2;
+            this.cmbActionTypes.SelectedIndexChanged += new System.EventHandler(this.cmbActionType_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -76,49 +78,58 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Action Type:";
             // 
-            // button1
+            // butOK
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(300, 383);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.butOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.butOK.Location = new System.Drawing.Point(302, 385);
+            this.butOK.Name = "butOK";
+            this.butOK.Size = new System.Drawing.Size(75, 23);
+            this.butOK.TabIndex = 4;
+            this.butOK.Text = "OK";
+            this.butOK.UseVisualStyleBackColor = true;
+            this.butOK.Click += new System.EventHandler(this.butOK_Click);
             // 
-            // button2
+            // butCancel
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(381, 383);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.butCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.butCancel.Location = new System.Drawing.Point(383, 385);
+            this.butCancel.Name = "butCancel";
+            this.butCancel.Size = new System.Drawing.Size(75, 23);
+            this.butCancel.TabIndex = 5;
+            this.butCancel.Text = "Cancel";
+            this.butCancel.UseVisualStyleBackColor = true;
+            this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
             // 
             // lnkActionAbout
             // 
             this.lnkActionAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lnkActionAbout.AutoSize = true;
-            this.lnkActionAbout.Location = new System.Drawing.Point(412, 35);
+            this.lnkActionAbout.Location = new System.Drawing.Point(408, 35);
             this.lnkActionAbout.Name = "lnkActionAbout";
             this.lnkActionAbout.Size = new System.Drawing.Size(44, 13);
             this.lnkActionAbout.TabIndex = 6;
             this.lnkActionAbout.TabStop = true;
             this.lnkActionAbout.Text = "About...";
+            this.lnkActionAbout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkActionAbout_LinkClicked);
             // 
-            // ActionEditor
+            // frmActionEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 418);
+            this.ClientSize = new System.Drawing.Size(470, 420);
             this.Controls.Add(this.lnkActionAbout);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.butCancel);
+            this.Controls.Add(this.butOK);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbActionType);
+            this.Controls.Add(this.cmbActionTypes);
             this.Controls.Add(this.panel1);
-            this.Name = "ActionEditor";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(476, 445);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(476, 445);
+            this.Name = "frmActionEditor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Action Editor";
             this.Load += new System.EventHandler(this.ActionEditor_Load);
             this.panel1.ResumeLayout(false);
@@ -131,10 +142,10 @@
 
         private System.Windows.Forms.PropertyGrid pgActionEditor;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cmbActionType;
+        private System.Windows.Forms.ComboBox cmbActionTypes;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button butOK;
+        private System.Windows.Forms.Button butCancel;
         private System.Windows.Forms.LinkLabel lnkActionAbout;
     }
 }
